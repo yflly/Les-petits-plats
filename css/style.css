@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*HEADER*/
+.mainHeader {
+  width: 100%;
+  max-width: 1440px;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+@media (min-width: 1440px) {
+  .mainHeader {
+    padding: 40px 100px;
+  }
+}
+
+img {
+  width: 268px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.searchbar {
+  position: relative;
+  margin: 20px 0;
+}
+
+input {
+  width: 100%;
+  height: 69px;
+  padding: 0 20px;
+  font-size: 1rem;
+  background: #e7e7e7;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  position: absolute;
+  right: 17px;
+  top: 0;
+  height: 69px;
+  font-size: 1.8rem;
+  background: #e7e7e7;
+  border: none;
+  border-radius: 5px;
+}
+
+button :hover {
+  cursor: pointer;
+}
+
+/*FILTERS*/
+.filter_app,
+.filter_ing,
+.filter_ust {
+  display: inline-block;
+  height: 69px;
+  width: 100%;
+  position: relative;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+}
+
+.filter_ust :focus-visible {
+  outline: white;
+}
+
+.filter_ing :focus-visible {
+  outline: white;
+}
+
+.filter_app :focus-visible {
+  outline: white;
+}
+
+@media (min-width: 600px) {
+  .filter_app,
+  .filter_ing,
+  .filter_ust {
+    width: 170px;
+  }
+
+  .filter_app_opened,
+  .filter_ing_opened,
+  .filter_ust_opened {
+    width: 600px;
+  }
+
+  #appareils {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.fa-chevron-down {
+  position: absolute;
+  display: block;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.fa-chevron-up {
+  position: absolute;
+  display: block;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#ingredients__input,
+#appareils__input,
+#ustensiles__input {
+  height: 69px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0 40px 0 10px;
+}
+
+#ingredients__input {
+  background: #3282f7;
+}
+
+#appareils__input {
+  background: #68d9a4;
+}
+
+#ustensiles__input {
+  background: #ed6454;
+}
+
+ingredients__input,
+appareils__input,
+ustensiles__input :hover {
+  cursor: pointer;
+}
+
+ingredients__input,
+appareils__input,
+ustensiles__input ::placeholder {
+  color: #fff;
+}

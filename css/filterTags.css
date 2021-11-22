@@ -1,0 +1,34 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags div {
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 0 10px 10px 0;
+}
+
+.fa-times-circle {
+  margin-left: 10px;
+}
+
+.tag_ust {
+  background: #ed6454;
+}
+
+.tag_ing {
+  background: #3282f7;
+}
+
+.tag_app {
+  background: #68d9a4;
+}
+
+.filter_tag {
+  cursor: pointer;
+}

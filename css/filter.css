@@ -1,0 +1,78 @@
+.filterList {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: 65px;
+  border-radius: 0 0 5px 5px;
+  padding: 0px;
+  display: block;
+}
+
+ul {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.filterList_app_opened {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #68d9a4;
+  color: white;
+  padding: 1rem;
+  border-radius: 0 5px 5px 5px;
+  margin: 0;
+}
+
+.filterList_ust_opened {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #ed6454;
+  color: white;
+  padding: 1rem;
+  border-radius: 0 5px 5px 5px;
+  margin: 0;
+}
+
+.filterList_ing_opened {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #3282f7;
+  color: white;
+  padding: 1rem;
+  border-radius: 0 5px 5px 5px;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .filterList_app_opened,
+  .filterList_ing_opened,
+  .filterList_ust_opened {
+    width: 600px;
+  }
+}
+
+.filterList_app_closed,
+.filterList_ust_closed,
+.filterList_ing_closed {
+  display: none;
+}
+
+.app_liste,
+.ust_liste,
+.ing_liste {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: block;
+  width: 120px;
+  height: 100%;
+  cursor: pointer;
+}

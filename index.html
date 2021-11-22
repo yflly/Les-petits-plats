@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les petits plats</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main-content.css" />
+    <link rel="stylesheet" href="./css/filter.css" />
+    <link rel="stylesheet" href="./css/filterTags.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+  </head>
+  <body>
+    <header id="mainHeader" class="mainHeader">
+      <img src="logo/logo.png" alt="Les petits plats" />
+      <!--SEARCH BAR-->
+      <form class="searchbar">
+        <input
+          class="searchContent"
+          id="searchContent"
+          type="search"
+          placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+          aria-label="Searchbar"
+        />
+        <button class="searchbar_btn" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <!--TAGS-->
+      <div id="tags" class="tags"></div>
+      <!--FILTER-->
+      <div id="filter" class="filter">
+        <!--Ingrédients-->
+        <div id="ingredients" class="filter_ing filter_ing_close">
+          <input
+            type="text"
+            placeholder="Ingrédients"
+            id="ingredients__input"
+          />
+          <i class="fas fa-chevron-down" id="ing-chevron"></i>
+          <div class="filterList">
+            <ul
+              id="filterList_ingredients"
+              class="filterList_ing filterList_ing_closed"
+            ></ul>
+          </div>
+        </div>
+        <!--Appareils-->
+        <div id="appareils" class="filter_app filter_app_close">
+          <input type="text" placeholder="Appareils" id="appareils__input" />
+          <i class="fas fa-chevron-down" id="app-chevron"></i>
+          <div class="filterList">
+            <ul
+              id="filterList_appareils"
+              class="filterList_app filterList_app_closed"
+            ></ul>
+          </div>
+        </div>
+        <!--Ustensiles-->
+        <div id="ustensiles" class="filter_ust filter_ust_close">
+          <input type="text" placeholder="Ustensiles" id="ustensiles__input" />
+          <i class="fas fa-chevron-down" id="ust-chevron"></i>
+          <div class="filterList">
+            <ul
+              id="filterList_ustensiles"
+              class="filterList_ust filterList_ust_closed"
+            ></ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--RECIPES-->
+    <main class="main-content" id="homepage-main"></main>
+    <!--NO RESULTS-->
+    <p id="noResult" class="noResult"></p>
+
+    <script src="./data/recipes.js"></script>
+    <script src="./js/recipe.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/filterTags.js"></script>
+    <script src="./js/utils.js"></script>
+  </body>
+  </body>
+</html>
