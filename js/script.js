@@ -1,7 +1,7 @@
 const dom = document.getElementById("homepage-main");
 const noResult = document.getElementById("noResult");
 let results = [];
-const arrayTagSort = [];
+let arrayTagSort = [];
 renderRecipes(recipes);
 
 // ON AFFICHE TOUTES LES RECETTES AU CHARGEMENT DE LA PAGE
@@ -11,6 +11,8 @@ function renderRecipes(recipes) {
       .getElementById("homepage-main")
       .appendChild(new Recipe(recipe).recipeNodeFactory());
   });
+  arrayTagSort.length = 0;
+  Array.prototype.push.apply(arrayTagSort, recipes);
 }
 
 //BARRE DE RECHERCHE
@@ -50,7 +52,7 @@ searchBar.addEventListener("click", () => {
 //On crée un tableau results
 //On parcours chaque rubrique name, ingredients, description
 //On alimente results dès qu'on trouve les premieres lettres de la barre de recherche(search)
-
+// Tri à bulles
 /*function triRecipes(search) {
   //for (let i = 0; recipes.length; i++) {
   results.length = 0;
@@ -102,4 +104,6 @@ function triRecipes(search) {
     noResult.textContent =
       "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
   }
+  arrayTagSort.length = 0;
+  Array.prototype.push.apply(arrayTagSort, resultats);
 }

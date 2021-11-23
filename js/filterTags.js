@@ -113,6 +113,9 @@ function triTagRecipes(recipes) {
     noResult.textContent =
       "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
   }
+  //On utilise le arrayTagSort pour l'ajout de nouveau tag
+  arrayTagSort.length = 0;
+  Array.prototype.push.apply(arrayTagSort, result);
 }
 
 /*//Listener pour enlever le tag
