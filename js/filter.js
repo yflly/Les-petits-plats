@@ -37,7 +37,7 @@ ustensilesFilter.addEventListener("click", () => {
   let check = Check();
   if (ustensilesLiBox.classList.contains("filterList_ust_closed")) {
     filterBox("ust");
-    filterUstensils(check);
+    filterUstensils(arrayTagSort);
     ustensils.forEach((ust) => createLiUst(ulUstensiles, ust));
   } else {
     ustensilesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
@@ -55,7 +55,7 @@ appareilsFilter.addEventListener("click", () => {
   let check = Check();
   if (appareilsLiBox.classList.contains("filterList_app_closed")) {
     filterBox("app");
-    filterAppareils(check);
+    filterAppareils(arrayTagSort);
     appareils.forEach((app) => createLiApp(ulAppareils, app));
   } else {
     appareilsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
@@ -73,7 +73,7 @@ ingredientsFilter.addEventListener("click", () => {
   let check = Check();
   if (ingredientsLiBox.classList.contains("filterList_ing_closed")) {
     filterBox("ing");
-    filterIngredients(check);
+    filterIngredients(arrayTagSort);
     ingredients.forEach((ing) => createLiIng(ulIngredients, ing));
   } else {
     ingredientsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
