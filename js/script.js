@@ -50,37 +50,7 @@ searchBar.addEventListener("click", () => {
 //On crée un tableau results
 //On parcours chaque rubrique name, ingredients, description
 //On alimente results dès qu'on trouve les premieres lettres de la barre de recherche(search)
-
-/*function triRecipes(search) {
-  //for (let i = 0; recipes.length; i++) {
-  results.length = 0;
-  recipes.forEach((recipe) => {
-    const { name, ingredients, description } = recipe;
-    const triName = name.includes(search);
-    const triDescription = description.includes(search);
-    let triIngredients = false;
-    for (let y = 0; y < ingredients.length; y++) {
-      if (ingredients[y].ingredient.includes(search)) {
-        triIngredients = true;
-      }
-    }
-    if (triName || triDescription || triIngredients) {
-      results.push(recipe);
-    }
-    if (results.length) {
-      dom.innerHTML = "";
-      renderRecipes(results);
-      noResult.textContent = "";
-    } else {
-      dom.innerHTML = "";
-      noResult.textContent =
-        "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
-    }
-  });
-  //return results;
-}*/
-
-//Avec Filtre
+//Filter
 function triRecipes(search) {
   dom.innerHTML = "";
   const resultats = recipes.filter((recipe) => {
