@@ -215,27 +215,3 @@ function Check() {
   }
   return check;
 }
-
-/*// On contrôle quel array utiliser
-function CheckTag() {
-  check = "";
-  razLiBox();
-  CheckarrayTag();
-  if (arrayTagSort.length == 0) {
-    if (results.length == 0) {
-      check = recipes;
-    } else {
-      check = results;
-    }
-  } else {
-    check = arrayTagSort;
-  }
-  return check;
-}
-
-// On vérifie si il y a des tags ou non
-function CheckarrayTag() {
-  if (arrayTag.length == 0) {
-    arrayTagSort.length = 0;
-  }
-}*/
