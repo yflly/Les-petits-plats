@@ -37,7 +37,6 @@ function createAllTags() {
   createFilterTag(monSetIng, "ing");
   createFilterTag(monSetApp, "app");
   createFilterTag(monSetUst, "ust");
-  //researchFilterTag(check);
   triTagRecipes(check);
 }
 
@@ -49,43 +48,7 @@ function researchFilterTag(results) {
   arrayTag.forEach((item) => {
     triTagRecipes(item.textContent, results);
   });
-  //listenTagBar(arrayTag, results);
 }
-
-// On construit le DOM
-/*function triTagRecipes(search, recettes) {
-  arrayTagSort.length = 0;
-  recettes.forEach((recette) => {
-    const { ustensils, ingredients, appliance } = recette;
-    let triUst = false;
-    for (let u = 0; u < ustensils.length; u++) {
-      if (ustensils[u].includes(search)) {
-        triUst = true;
-      }
-    }
-    let triIngredients = false;
-    for (let y = 0; y < ingredients.length; y++) {
-      if (ingredients[y].ingredient.includes(search)) {
-        triIngredients = true;
-      }
-    }
-    const triApp = appliance.includes(search);
-    if (triUst || triApp || triIngredients) {
-      arrayTagSort.push(recette);
-    }
-    if (arrayTagSort.length) {
-      dom.innerHTML = "";
-      renderRecipes(arrayTagSort);
-      noResult.textContent = "";
-    } else {
-      dom.innerHTML = "";
-      noResult.textContent =
-        "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
-    }
-  });
-  results.length = 0;
-  Array.prototype.push.apply(results, arrayTagSort); //On fusionne les tableaux
-}*/
 
 function triTagRecipes(recipes) {
   const filterTag = document.querySelectorAll(".filter_tag");
@@ -113,38 +76,7 @@ function triTagRecipes(recipes) {
     noResult.textContent =
       "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
   }
+  //On utilise le arrayTagSort pour l'ajout de nouveau tag
+  arrayTagSort.length = 0;
+  Array.prototype.push.apply(arrayTagSort, result);
 }
-
-/*//Listener pour enlever le tag
-function listenTagBar(filters, recettes) {
-  filters.forEach((filter) => {
-    filter.addEventListener("click", () => {
-      removeTag(filter, filters, recettes);
-    });
-  });
-}
-
-function removeTag(selectedTag, arrayTag, recettes) {
-  const index = arrayTag.indexOf(selectedTag);
-  //if (index > -1) {
-  arrayTag.splice(index, 1);
-  selectedTag.remove();
-  //arrayTag.slice(index, 0);
-  //selectedTag.remove();
-  //results.splice(0, results.length);
-  //}
-
-  if (!arrayTag.length) {
-    dom.innerHTML = "";
-    results.length = 0;
-    arrayTag.length = 0;
-    selectedFiltersUst.length = 0;
-    selectedFiltersApp.length = 0;
-    selectedFiltersIng.length = 0;
-    renderRecipes(recipes);
-    noResult.textContent =
-      "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
-  } else {
-    researchFilterTag(recipes);
-  }
-}*/
