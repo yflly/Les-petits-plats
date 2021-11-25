@@ -19,16 +19,11 @@
 .articleRecipe {
   width: 100%;
   max-width: 380px;
-  /*max-height: 364px;*/
   border-radius: 5px;
   margin: 0 20px 50px 20px;
   align-self: stretch;
   transition: box-shadow 0.2s;
 }
-
-/*.articleRecipe :hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-}*/
 
 @media (min-width: 1440px) {
   .articleRecipe {
@@ -52,8 +47,7 @@ a {
 .recipeData {
   padding: 10px 20px 10px 20px;
   background: #e7e7e7;
-  border-radius: 0 0 5px 5 px;
-  /*flex-grow: 1;*/
+  border-radius: 0 0 5px 5px;
   height: 186px;
 }
 
