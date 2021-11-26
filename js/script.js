@@ -52,30 +52,28 @@ searchBar.addEventListener("click", () => {
 //On crée un tableau results
 //On parcours chaque rubrique name, ingredients, description
 //On alimente results dès qu'on trouve les premieres lettres de la barre de recherche(search)
-// Tri à bulles
+//Avec Filtre
 function triRecipes(search) {
-  results.length = 0;
-  for (let i = 0; i < recipes.length; i++) {
-    const { name, ingredients, description } = recipes[i];
-    const triName = name.toLowerCase().includes(search);
-    const triDescription = description.toLowerCase().includes(search);
-    let triIngredients = false;
-    for (let y = 0; y < ingredients.length; y++) {
-      if (ingredients[y].ingredient.toLowerCase().includes(search)) {
-        triIngredients = true;
-      }
-    }
-    if (triName || triDescription || triIngredients) {
-      results.push(recipes[i]);
-    }
-    if (results.length) {
-      dom.innerHTML = "";
-      renderRecipes(results);
-      noResult.textContent = "";
-    } else {
-      dom.innerHTML = "";
-      noResult.textContent =
-        "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
-    }
+  dom.innerHTML = "";
+  const resultats = recipes.filter((recipe) => {
+    return (
+      recipe.name.toLowerCase().startsWith(search) ||
+      recipe.description.toLowerCase().includes(search) ||
+      recipe.ingredients.some((ingredient) =>
+        ingredient.ingredient.toLowerCase().includes(search)
+      )
+    );
+  });
+  if (resultats.length) {
+    renderRecipes(resultats);
+    noResult.textContent = "";
+    results = resultats.slice(0);
+  } else {
+    dom.innerHTML = "";
+    results.length = 0;
+    noResult.textContent =
+      "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
   }
+  arrayTagSort.length = 0;
+  Array.prototype.push.apply(arrayTagSort, resultats);
 }
